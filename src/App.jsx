@@ -1,3 +1,4 @@
+import React from 'react'
 export default function App() {
   const lineUrl = "https://lin.ee/SFmihhUx";
   const qrUrl = "https://qr-official.line.me/gs/M_957ridwt_GW.png?oat_content=qr";
