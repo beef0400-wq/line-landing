@@ -9,7 +9,6 @@
   --muted: rgba(255, 255, 255, 0.7);
   --soft: rgba(255, 255, 255, 0.5);
   --brand: #34d399;
-  --brand-dark: #06251c;
 }
 
 * {
@@ -24,7 +23,7 @@ html, body, #root {
     radial-gradient(circle at right, rgba(59, 130, 246, 0.09), transparent 24%),
     var(--bg);
   color: var(--text);
-  font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Noto Sans TC", system-ui, sans-serif;
 }
 
 body {
@@ -115,6 +114,18 @@ img {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 32px;
+}
+
+.hero-checks {
+  margin-top: 28px;
+  display: grid;
+  gap: 10px;
+}
+
+.hero-checks p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .btn {
@@ -224,7 +235,8 @@ img {
 .testimonial-card blockquote,
 .note,
 .faq-card p,
-.cta-panel p {
+.cta-panel p,
+.feedback-card p {
   color: var(--muted);
   line-height: 1.85;
 }
@@ -257,13 +269,19 @@ img {
 }
 
 .feature-grid,
-.faq-list {
+.faq-list,
+.feedback-grid,
+.proof-grid,
+.stats-grid {
   display: grid;
   gap: 18px;
 }
 
 .feature-card,
-.faq-card {
+.faq-card,
+.feedback-card,
+.stat-card,
+.proof-card {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 28px;
@@ -271,9 +289,42 @@ img {
 }
 
 .feature-card h3,
-.faq-card h3 {
+.faq-card h3,
+.feedback-card h3 {
   margin: 0;
   font-size: 1.2rem;
+}
+
+.feedback-badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  background: rgba(52, 211, 153, 0.12);
+  color: #8df0c7;
+  border: 1px solid rgba(52, 211, 153, 0.22);
+}
+
+.stats-section {
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 28px 20px;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--brand);
+}
+
+.stat-label {
+  margin-top: 8px;
+  color: var(--muted);
 }
 
 .split-grid {
@@ -331,6 +382,18 @@ img {
   font-size: 0.95rem;
 }
 
+.proof-card {
+  padding: 12px;
+  overflow: hidden;
+}
+
+.proof-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
 .cta-panel {
   border: 1px solid var(--line);
   border-radius: 32px;
@@ -367,7 +430,10 @@ img {
     grid-template-columns: 1fr auto;
   }
 
-  .feature-grid {
+  .feature-grid,
+  .feedback-grid,
+  .proof-grid,
+  .stats-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -396,5 +462,9 @@ img {
   .qr-wrap,
   .qr-mini-wrap {
     margin: 0 auto;
+  }
+
+  .proof-img {
+    height: 220px;
   }
 }
